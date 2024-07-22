@@ -5,6 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #IfWinActive ahk_exe ProManagerPlus.exe
 
+; Main Initialiser function
 F2::
 WinMaximize,
 InputBox, totalAmps ,Q3-D Initialiser, How many amps are currently connected?,, 250, 160
@@ -119,6 +120,7 @@ else
 ; loop back here to line 10/11
 return
 
+; one amp Initialiser
 F3::
 firmwareUpdate := false
 WinActivate, ahk_exe ProManagerPlus.exe
@@ -179,6 +181,7 @@ while(processing)
 }
 return
 
+; Update firmware only
 F4::
 WinMaximize,
 InputBox, totalAmps ,Q3 Firmware Updater, How many amps are currently connected?,, 250, 160
@@ -230,7 +233,7 @@ else
     }
 }
 
-^!v:: ;ctrl+alt+ve
+^!v:: ;ctrl+alt+v
 ExitApp
 ; ^!z::  ; Control+Alt+Z hotkey.
 ; MouseGetPos, MouseX, MouseY
